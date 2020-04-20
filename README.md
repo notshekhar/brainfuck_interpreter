@@ -2,7 +2,7 @@
 
 **Brainfuck** is probably the craziest language i have ever had the pleasure of coming across. And, yes, there are quite a few tutorials that you will find on google about the language and how to program in it, but i am writing this one as most of them that you will find seem to only cover just the basics of using the operators.
 
-Brainfuck, language itself, is a *Turing-complete language* created by Urban Müller. The language only consists of 8 operators, yet with the 8 operators, `<>+-[],.` you are capable of writing almost any program you can think of. 
+Brainfuck, language itself, is a *Turing-complete language* created by Urban Müller. The language only consists of 8 operators, yet with the 8 operators, `<>+-[],.=` you are capable of writing almost any program you can think of. 
 
 To write programs in brainfuck, i would suggest you get a few things first. 
 
@@ -17,7 +17,7 @@ Lastly, i would recommend having no life and lots of time on your hands to actua
 
 ## BASICS
 
-The idea behind `brainfuck` is memory manipulation. Basically you are given an array of 30,000 1byte memory blocks. The array size is actually dependent upon the implementation used in the compiler or interpretor, but standard brainfuck states 30,000. Within this array, you can increase the memory pointer, increase the value at the memory pointer, etc. Let me first present to you the 8 operators available to us.
+The idea behind `brainfuck` is memory manipulation. Basically you are given an array of 30,000 1byte memory blocks. The array size is actually dependent upon the implementation used in the compiler or interpretor, but standard brainfuck states 30,000. Within this array, you can increase the memory pointer, increase the value at the memory pointer, etc. Let me first present to you the 9 operators available to us.
 
 ```brainfuck
 > = increases memory pointer, or moves the pointer to the right 1 block.
@@ -28,6 +28,7 @@ The idea behind `brainfuck` is memory manipulation. Basically you are given an a
 ] = if block currently pointed to's value is not zero, jump back to [
 , = like c getchar(). input 1 character.
 . = like c putchar(). print 1 character to the console
+= = print decimal number from memory to console
 ```
 
 #### Some rules:
