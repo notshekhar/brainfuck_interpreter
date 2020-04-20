@@ -28,7 +28,7 @@ The idea behind `brainfuck` is memory manipulation. Basically you are given an a
 ] = if block currently pointed to's value is not zero, jump back to [
 , = like c getchar(). input 1 character.
 . = like c putchar(). print 1 character to the console
-= = print decimal number from memory to console
+= = print number in current memory pointer to console
 ```
 
 #### Some rules:
