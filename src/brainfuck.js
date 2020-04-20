@@ -30,7 +30,7 @@ const parser = (lex) => {
             case "[":
                 m = { type: "LOOP_START", end: 0 }
                 let e = 0
-                while (lex[i + e] != "]") {
+                while (lex[i + e] != "]" && i + e != lex.length) {
                     m.end++
                     e++
                 }
