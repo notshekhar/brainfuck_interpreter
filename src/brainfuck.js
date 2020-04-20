@@ -40,6 +40,9 @@ const parser = (lex) => {
             case "]":
                 m = { type: "LOOP_END" }
                 break
+            case "=":
+                m = {type: "PRINT_DECIMAL"}
+                break
             default:
                 break
         }
@@ -80,6 +83,9 @@ const evaluate = (parse) => {
             case "DOWN_COUNT":
                 if (memory_error()) break
                 memory[cp] -= 1
+                break
+            case "PRINT_DECIMAL":
+                output += memory[cp]
                 break
             case "LOOP_START":
                 if (memory[cp] == 0) {
