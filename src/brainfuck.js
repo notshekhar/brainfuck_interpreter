@@ -34,6 +34,8 @@ const parser = (lex) => {
                     m.end++
                     e++
                 }
+                if (i + e == lex.length)
+                    console.error("Mismatched parentheses.")
                 break
             case "]":
                 m = { type: "LOOP_END" }
@@ -44,7 +46,6 @@ const parser = (lex) => {
         moves.push(m)
     }
     moves = moves.filter((e) => e.type != undefined)
-    console.log(moves)
     return moves
 }
 
@@ -100,4 +101,10 @@ const evaluate = (parse) => {
         }
     }
     console.log(memory)
+}
+
+module.exports = {
+    evaluate,
+    parser,
+    lexer,
 }
