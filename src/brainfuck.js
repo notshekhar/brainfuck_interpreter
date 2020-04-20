@@ -49,12 +49,14 @@ const parser = (lex) => {
     return moves
 }
 
+const MEMORY_SIZE = 30000
+let memory = new Array(MEMORY_SIZE).fill(0)
+let cp = 0
+let pogram_counter = 0
+
 const evaluate = (parse) => {
-    const MEMORY_SIZE = 30000
-    let memory = new Array(MEMORY_SIZE).fill(0)
-    let cp = 0
-    let pogram_counter = 0
     //memory error
+    let output = ""
     const memory_error = () => {
         if (cp < 0 || cp >= MEMORY_SIZE) {
             console.error(`Memory error: ${cp}`)
@@ -91,7 +93,7 @@ const evaluate = (parse) => {
                 i = program_counter
                 break
             case "OUTPUT_ASCII":
-                console.log(String.fromCharCode(memory[cp]))
+                output += String.fromCharCode(memory[cp])
                 break
             case "INPUT":
                 let input = prompt("Enter Input: ")
@@ -100,11 +102,15 @@ const evaluate = (parse) => {
                 break
         }
     }
-    console.log(memory)
+    if (output != "") process.stdout.write(output + "\n")
+}
+
+const interpret = (str) => {
+    evaluate(parser(lexer(str)))
 }
 
 module.exports = {
-    evaluate,
-    parser,
-    lexer,
+    interpret,
+    MEMORY_SIZE,
+    memory,
 }
