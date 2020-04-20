@@ -2,7 +2,7 @@
 
 **Brainfuck** is probably the craziest language i have ever had the pleasure of coming across. And, yes, there are quite a few tutorials that you will find on google about the language and how to program in it, but i am writing this one as most of them that you will find seem to only cover just the basics of using the operators.
 
-Brainfuck, language itself, is a *Turing-complete language* created by Urban Müller. The language only consists of 8 operators, yet with the 8 operators, `<>+-[],.=` you are capable of writing almost any program you can think of. 
+Brainfuck, language itself, is a *Turing-complete language* created by Urban Müller. The language only consists of 9 operators, yet with the 8 operators, `<>+-[],.=` you are capable of writing almost any program you can think of. 
 
 To write programs in brainfuck, i would suggest you get a few things first. 
 
