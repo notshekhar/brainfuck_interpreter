@@ -1,4 +1,5 @@
-const prompt = require("prompt-sync")()
+let promp
+if (typeof module !== "undefined") promp = require("prompt-sync")()
 
 const object = (function () {
     const lexer = (string) => {
@@ -105,7 +106,10 @@ const object = (function () {
                     output += String.fromCharCode(memory[cp])
                     break
                 case "INPUT":
-                    let input = prompt("Enter a Character or a number: ")
+                    let input
+                    if (typeof module !== "undefined")
+                        input = promp("Enter a character or a number: ")
+                    else input = prompt("Enter a Character or a number")
                     if (isNaN(parseInt(input))) memory[cp] = input.charCodeAt(0)
                     else memory[cp] = parseInt(input)
                     break
