@@ -1,5 +1,5 @@
 const prompt = require("prompt-sync")()
-const { interpret, memory, MEMORY_SIZE } = require("./src/brainfuck")
+const { eval, memory, MEMORY_SIZE } = require("./src/brainfuck")
 const fs = require("fs")
 // [Hello World!] =[72 101 108 108 111 32 87 111 114 108 100 33]
 // let str = ">++++++++++[<+++++++>-]<++.>+++[<++++++++++>-]<-.+++++++..+++.>++++++++[<---------->-]<+.>+++++[<++++++++++>-]<+++++."
@@ -7,11 +7,11 @@ const fs = require("fs")
 function _first() {
     const V = "1.0.0"
     console.log(`Welcome to Brainfuck v${V}.`)
-    console.log(`Type ".help" for more information. And ".exit" to exit`)
+    console.log(`Type ".help" for more information. And ".q" to Quit`)
     console.log(`Type ".m" or ".memory" to see memory blocks`)
     function listen() {
         let str = prompt("> ")
-        if (str == ".exit") return
+        if (str == ".q") return
         if (str == ".m" || str == ".memory") {
             let add = prompt("Enter block address: ")
             process.stdout.write(memory[parseInt(add)] + "")
@@ -20,7 +20,7 @@ function _first() {
             print_info()
             listen()
         }
-        interpret(str)
+        eval(str)
         listen()
     }
     function print_info() {
