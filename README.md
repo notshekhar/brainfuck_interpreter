@@ -7,6 +7,9 @@
 - `rename` `index-win.exe` to brainfuck and add its Path to environment `path`
 - Create a file with `<filename>.drf`
 - and interpret is using `brainfuck <filename>`
+# OR
+- Download brainfuck interpreter directly from [here](https://github.com/notshekhar/brainfuck_interpreter/releases/tag/v1.0.0)
+
 ## INTRODUCTION
 
 **Brainfuck** is probably the craziest language i have ever had the pleasure of coming across. And, yes, there are quite a few tutorials that you will find on google about the language and how to program in it, but i am writing this one as most of them that you will find seem to only cover just the basics of using the operators.
